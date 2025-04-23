@@ -1,3 +1,4 @@
+// não sei comentar código, mas é isso ai
 let rotationX = 0;
 let rotationY = 0;
 let velocityX = 0;
@@ -9,8 +10,7 @@ let autoRotation = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  noStroke();
-  frameRate(60);
+  frameRate(240); // CUBO 240hz METENDO FLICK EM NOOB
 }
 
 function draw() {
@@ -19,15 +19,15 @@ function draw() {
   rotationX += velocityX;
   rotationY += velocityY;
   
-  velocityX *= 0.98;
-  velocityY *= 0.98;
+  velocityX *= 0.98; // ISSO FAZ O CUBO VOLTAR A GIRAR SOZINHO DEPOIS DE TU FAZER ELE GIRAR P KRL COM O MOUSE
+  velocityY *= 0.98; // isso aqui tbm, obviamente
   
-  if (autoRotation && !isDragging) {
-    velocityX += 0.0005 ;
+  if (autoRotation && !isDragging) { //CUBO GIRANDO P KRL SOZINHO :O
+    velocityX += 0.0005;
     velocityY += 0.0005;
   }
 
-  pointLight(
+  pointLight( // COR DA LUZ DO CUBO
     150 + sin(frameCount * 0.02) * 105,
     150 + sin(frameCount * 0.03) * 105,
     150 + sin(frameCount * 0.04) * 105,
@@ -41,17 +41,17 @@ function draw() {
   
   normalMaterial();
   
-  box(300);
+  box(300); // WOOW CUBO FODA
 }
 
-function mousePressed() {
+function mousePressed() { // CLICA NO CUBO E ARRANSTA PRA TU VER UM BGL FODA
   isDragging = true;
   lastMouseX = mouseX;
   lastMouseY = mouseY;
   autoRotation = false;
 }
 
-function mouseDragged() {
+function mouseDragged() { // GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA GIRA
   let deltaX = mouseX - lastMouseX;
   let deltaY = mouseY - lastMouseY;
   
@@ -62,16 +62,16 @@ function mouseDragged() {
   lastMouseY = mouseY;
 }
 
-function mouseReleased() {
+function mouseReleased() { // SOLTA O MOUSE PRA TU VER O CUBO VOLTANDO AO NORMAR
   isDragging = false;
   autoRotation = true;
 }
 
-function windowResized() {
+function windowResized() { // po, isso aqui so deixa o canvas do tamanho da janela msm, nada demais
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function keyPressed() {
+function keyPressed() { // APERTA O ESPAÇO AI PRA TU VER
   if (key === ' ') {
     rotationX = 0;
     rotationY = 0;
