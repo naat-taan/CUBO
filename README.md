@@ -1,6 +1,6 @@
 # Interactive 3D Cube Visualization
 
-A WebGL-based 3D cube implementation with dynamic controls and lighting effects, built using p5.js.
+A WebGL-based 3D cube implementation with dynamic controls and lighting effects, built using p5.js and React.
 
 ![Cube Demo](./assets/CUBO.gif)
 
